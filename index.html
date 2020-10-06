@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cover Letter Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="src/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      body {
+        font-family: 'Helvetica';
+      }
+      .main {
+        padding: 60px 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        margin: 0 auto;
+      }
+      input {
+        width: 300px;
+        height: 34px;
+        margin: 6px 0;
+      }
+      #submit {
+        width: 200px;
+        cursor: pointer;
+      }
+      label {
+        text-transform: capitalize;
+      }
+      .cover-letter {
+        width: 600px;
+        margin: 0 auto;
+      }
+      h2, h3, strong {
+        font-size: 16px;
+        font-weight: normal;
+      }
+      a {
+        text-decoration: none;
+      }
+      #bold-option {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app"></main>
+    <div class="main">
+      <form action="index.html" method="post">
+      <label for="name">name
+        <input type="text" name="name" id="name">
+      </label>
+      <label for="company">company
+        <input type="text" name="company" id="company">
+      </label>
+      <label for="mission">mission
+        <input type="text" name="mission" id="mission">
+      </label>
+      <label for="position">position
+        <input type="text" name="position" id="position">
+      </label>
+      <!-- <input type="submit" value="Submit" id="submit"> -->
+      <!-- <button id="submit">Submit</button> -->
+      </form>
+    </div>
+
+    <div class="cover-letter">
+      <h2>Dear <strong class="name"></strong>,</h2>
+      <br>
+      <p id="letter">
+        I am a highly creative, goal-oriented and puzzle-loving coding aficionado, who finds immense satisfaction in
+        constructing projects from the ground up, which is why I am thrilled at the prospect of joining <strong class="company"></strong> as a
+        <strong class="position"></strong>.
+        <br><br>
+      I acquired my foundations at App Academy, where I spent 1,000+ hours mastering a primary stack consisting of Ruby, Ruby on
+      Rails, JavaScript and React/Redux, along with other technologies such as: HTML5, CSS, Sass, jQuery,
+      AJAX, SQL, SQLite, PostgreSQL, Node.js, Express.js, MongoDB, Mongoose Git, AWS and Heroku.
+
+      <!-- Along with acquiring technical expertise, my tutelage at App Academy has led to an exponential enhancement of my
+      communication and teamwork skills. -->
+        <br><br>
+        I invite you to visit <a href="https://denizen-confidant.herokuapp.com">Denizen Confidant</a> (https://denizen-confidant.herokuapp.com), a recent full-stack project of mine,
+        to see some of the aforementioned skills in action.
+        <br><br>
+        As a result of my technical prowess coupled with my tenacity for nonstop learning and improving, I’m confident I’d be a valuable
+        asset as a <strong class="position"></strong> at <strong class="company"></strong>. As such, I look forward to speaking with you about any potential next steps.
+        <!-- <strong class="company"></strong>’s mission to <strong class="mission"></strong> is one I’d love to contribute to as a member of a team that values varying
+        perspectives and inclusivity, and as such, I look forward to speaking with you about any potential next steps. -->
+        <br><br>
+        Thank you for your consideration.
+        <h3>Best regards,
+          <br><br>
+          Nahuel Gorosito
+        </h3>
+      </p>
+      <a download="cover letter.pdf" href="#" id="link">Download</a>
+    </div>
+
+    <script>
+      // $(document).ready(function() {
+      // const form = $('form');
+      // const inputs = $('input');
+      // $('input').each(function()  {
+      //   $(this).change(function(e) {
+      //     $(this).val(e.target.value);
+      //   })
+
+      // })
+      
+      // })
+      let content = $('#letter').text() + "\n" + $('.cover-letter h3').text();
+      let blob = new Blob([content], {type: 'application/octet-stream'});
+      link.href = URL.createObjectURL(blob);
+      // link.download = "CoverLetter" + new Date() + ".pdf";
+      // function download(blob) {
+      //    const file = new Blob([resp], { type: 'application/pdf' });
+
+      //   }
+      //   download(URL.createObjectURL(blob));
+    </script>
+  </body>
+</html>
+
+<!-- `#${input.id}` -->
