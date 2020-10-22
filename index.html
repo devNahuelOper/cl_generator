@@ -74,8 +74,7 @@
       <br>
       <p id="letter">
         I am a highly creative, goal-oriented and puzzle-loving coding aficionado, who finds immense satisfaction in
-        constructing projects from the ground up, which is why I am thrilled at the prospect of joining <strong class="company"></strong> as a
-        <strong class="position"></strong>.
+        constructing projects from the ground up, which is why I am thrilled at the prospect of joining <strong class="company"></strong> as a <strong class="position"></strong>.
         <br><br>
       I acquired my foundations at App Academy, where I spent 1,000+ hours mastering a primary stack consisting of Ruby, Ruby on
       Rails, JavaScript and React/Redux, along with other technologies such as: HTML5, CSS, Sass, jQuery,
@@ -98,30 +97,34 @@
           Nahuel Gorosito
         </h3>
       </p>
-      <a download="cover letter.pdf" href="#" id="link">Download</a>
+      <a id="link">Download</a>
     </div>
 
     <script>
-      // $(document).ready(function() {
-      // const form = $('form');
-      // const inputs = $('input');
-      // $('input').each(function()  {
-      //   $(this).change(function(e) {
-      //     $(this).val(e.target.value);
-      //   })
-
-      // })
-      
-      // })
-      let content = $('#letter').text() + "\n" + $('.cover-letter h3').text();
-      let blob = new Blob([content], {type: 'application/octet-stream'});
-      link.href = URL.createObjectURL(blob);
-      // link.download = "CoverLetter" + new Date() + ".pdf";
+      let content;
+      $(document).ready(function() {
+      const form = $('form');
+      const inputs = $('input');
+      $('input').each(function()  {
+        $(this).change(function(e) {
+          $(this).val(e.target.value);
+           content = $('#letter').text() + "\n" + $('.cover-letter h3').text();
+           console.log(content);
+           let blob = new Blob([content],  {type: 'application/msword'});
+           link.href = URL.createObjectURL(blob);
+           link.download = "CoverLetter" + new Date() + ".doc";
+           link.download = `CoverLetter${$('.company').text()}`;
+        })
+      });
+     
+      })
+     
+     
       // function download(blob) {
       //    const file = new Blob([resp], { type: 'application/pdf' });
 
       //   }
-      //   download(URL.createObjectURL(blob));
+        // download(URL.createObjectURL(blob));
     </script>
   </body>
 </html>
