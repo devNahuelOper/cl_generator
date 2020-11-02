@@ -79,12 +79,12 @@
       I acquired my foundations at App Academy, where I spent 1,000+ hours mastering a primary stack consisting of Ruby, Ruby on
       Rails, JavaScript and React/Redux, along with other technologies such as: HTML5, CSS, Sass, jQuery,
       AJAX, SQL, SQLite, PostgreSQL, Node.js, Express.js, MongoDB, Mongoose Git, AWS and Heroku.
-
-      <!-- Along with acquiring technical expertise, my tutelage at App Academy has led to an exponential enhancement of my
-      communication and teamwork skills. -->
-        <br><br>
+        <br>
         I invite you to visit <a href="https://denizen-confidant.herokuapp.com">Denizen Confidant</a> (https://denizen-confidant.herokuapp.com), a recent full-stack project of mine,
         to see some of the aforementioned skills in action.
+        <br><br>
+        Since graduating from App Academy in July 2020, I have been spending 8-12 hours a day doubling my knowledge and skills via continuing implementing features on my projects, devouring additional courses and most recently, working as a Junior Developer at Solvana, a startup dedicated to solar energy (Karvana for solar). In this collaboration, I've been learning valuable new technologies such as Typescript, Jest, React Hooks, MaterialUI and AWS Lambda. Perhaps most importantly, this collaboration has given me the experience working with others in a high-stakes professional setting, where an optimal Git workflow is absolutely essential.
+
         <br><br>
         As a result of my technical prowess coupled with my tenacity for nonstop learning and improving, I’m confident I’d be a valuable
         asset as a <strong class="position"></strong> at <strong class="company"></strong>. As such, I look forward to speaking with you about any potential next steps.
@@ -107,7 +107,7 @@
       const inputs = $('input');
       $('input').each(function()  {
         $(this).change(function(e) {
-          $(this).val(e.target.value);
+          $(this).val(e.target.value.trim());
            content = $('#letter').text() + "\n" + $('.cover-letter h3').text();
            console.log(content);
            let blob = new Blob([content],  {type: 'application/msword'});
