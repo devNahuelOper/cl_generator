@@ -1,0 +1,9 @@
+       <p>
+          Since graduating from App Academy in July 2020, I have been spending
+          8-12 hours a day doubling my knowledge and skills via continuing
+          implementing features on my projects, devouring additional courses and
+          most recently, working as a Junior Developer at Solvana, a startup
+          dedicated to solar energy (Karvana for solar). In this collaboration,
+          I've been learning valuable new technologies such as Typescript, Jest,
+          React Hooks, MaterialUI and AWS Lambda.
+        </p>
