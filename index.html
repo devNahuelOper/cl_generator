@@ -5,6 +5,7 @@
     <title>Cover Letter Generator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="src/index.js"></script>
+
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
       body {
@@ -85,39 +86,44 @@
       <br />
       <article id="letter">
         <p>
-          &nbsp; &nbsp; I am a highly creative, goal-oriented and puzzle-loving coding
-          aficionado, who finds immense satisfaction in constructing projects
-          from the ground up, which is why I am thrilled at the prospect of
-          joining <strong class="company"></strong> as a
+          &nbsp; &nbsp; I am a highly creative, goal-oriented and puzzle-loving
+          coding aficionado, who finds immense satisfaction in constructing
+          projects from the ground up, which is why I am thrilled at the
+          prospect of joining <strong class="company"></strong> as a
           <strong class="position"></strong>.
         </p>
         <p>
-          &nbsp; &nbsp; I acquired my foundations at App Academy, where I spent 1,000+ hours
-          mastering a primary stack consisting of Ruby, Ruby on Rails,
-          JavaScript and React/Redux, along with other technologies such as:
-          HTML5, CSS, Sass, jQuery, AJAX, SQL, SQLite, PostgreSQL, Node.js,
+          &nbsp; &nbsp; I acquired my foundations at App Academy, where I spent
+          1,000+ hours mastering a primary stack consisting of Ruby, Ruby on
+          Rails, JavaScript and React/Redux, along with other technologies such
+          as: HTML5, CSS, Sass, jQuery, AJAX, SQL, SQLite, PostgreSQL, Node.js,
           Express.js, MongoDB, Mongoose Git, AWS and Heroku.
           <small id="plug">
             I invite you to visit
-            <a href="https://denizen-confidant.herokuapp.com" target="_blank">Denizen Confidant</a>
-            (https://denizen-confidant.herokuapp.com), a recent full-stack project
-            of mine, to see some of the aforementioned skills in action.
+            <a href="https://denizen-confidant.herokuapp.com" target="_blank"
+              >Denizen Confidant</a
+            >
+            (https://denizen-confidant.herokuapp.com), a recent full-stack
+            project of mine, to see some of the aforementioned skills in action.
           </small>
         </p>
         <p>
-          &nbsp; &nbsp; My time spent since July 2020, when I graduated from App Academy, is where I've
-          gotten the chance to grow exponentially as a developer. While I attribute a sizable
-          portion of this growth to a combination of taking additional courses and the continuous 
-          implementations of bigger and better features in my projects, it is my time working as
-          a Junior Developer at Solvana <em> (an ecommerce solar energy startup)</em>, that has been most instrumental.
-          In the past couple of months at Solvana, I've added several new technologies to 
-          my repertoire, such as TypeScript, AWS Lambdas, React Hooks, Material-UI and Jest,
-          in addition to cementing my skills in all that is JavaScript/React/Redux. 
+          &nbsp; &nbsp; My time spent since July 2020, when I graduated from App
+          Academy, is where I've gotten the chance to grow exponentially as a
+          developer. While I attribute a sizable portion of this growth to a
+          combination of taking additional courses and the continuous
+          implementations of bigger and better features in my projects, it is my
+          time working as a Junior Developer at Solvana
+          <em> (an ecommerce solar energy startup)</em>, that has been most
+          instrumental. In the past couple of months at Solvana, I've added
+          several new technologies to my repertoire, such as TypeScript, AWS
+          Lambdas, React Hooks, Material-UI and Jest, in addition to cementing
+          my skills in all that is JavaScript/React/Redux.
         </p>
         <p>
-          &nbsp; &nbsp; As a result of my technical prowess coupled with my tenacity for
-          nonstop learning and improving, I’m confident I’d be a valuable asset
-          as a <strong class="position"></strong> at
+          &nbsp; &nbsp; As a result of my technical prowess coupled with my
+          tenacity for nonstop learning and improving, I’m confident I’d be a
+          valuable asset as a <strong class="position"></strong> at
           <strong class="company"></strong>. As such, I look forward to speaking
           with you about any potential next steps.
           <!-- <strong class="company"></strong>’s mission to <strong class="mission"></strong> is one I’d love to contribute to as a member of a team that values varying
@@ -130,10 +136,13 @@
           Nahuel Gorosito
         </h3>
       </article>
-      <a id="link">Download</a>
+      <a href="#" id="link">Download</a>
     </div>
 
     <script>
+      // const PDFDocument = require("pdfkit");
+
+
       let content;
       $(document).ready(function () {
         const form = $("form");
@@ -141,12 +150,21 @@
         $("input").each(function () {
           $(this).change(function (e) {
             $(this).val(e.target.value.trim());
-            content = $("#letter").text() + "\n" + $(".cover-letter h3").text();
+            content = $("#letter").text();
             console.log(content);
-            let blob = new Blob([content], { type: "application/msword" });
-            link.href = URL.createObjectURL(blob);
-            // link.download = "CoverLetter" + new Date() + ".doc";
-            link.download = `CoverLetter${$("#company").val()}.doc`;
+            // let blob = new Blob([content], { type: "application/msword" });
+            // link.href = URL.createObjectURL(blob);
+            // // link.download = "CoverLetter" + new Date() + ".doc";
+            // link.download = `CoverLetter${$("#company").val()}.doc`;
+            // $("#link").click((e) => {
+            //   // makePdf(`${$('#company').val()}_CL`, content);
+            //   e.preventDefault();
+            //   let pdfDoc = new PDFDocument;
+            //   pdfDoc.pipe(fs.createWriteStream(`/Users/nahuelgorosito/Desktop/${$('#company').val()}.pdf`));
+            //   pdfDoc.text(content);
+            //   pdfDoc.end();
+            //   console.log('PDF Made!');
+            // })
           });
         });
       });
@@ -156,7 +174,22 @@
 
       //   }
       // download(URL.createObjectURL(blob));
+      function trimSpaces() {
+        let replace = $("#letter")
+          .html()
+          .replace(/&nbsp;/g, "");
+        return $("#letter").html(replace).text();
+      }
+
+      // function makePdf(title, text) {
+      //   let pdfDoc = new PDFDocument;
+      //   pdfDoc.pipe(fs.createWriteStream(`/Users/nahuelgorosito/Desktop/${title}.pdf`));
+      //   pdfDoc.text(text);
+      //   pdfDoc.end();
+      //   console.log(text);
+      // }
     </script>
+   
   </body>
 </html>
 

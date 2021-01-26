@@ -10,7 +10,13 @@
   "author": "Nahuel Gorosito",
   "license": "ISC",
   "dependencies": {
+    "pdfkit": "^0.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-optional"
+    ]
   }
 }

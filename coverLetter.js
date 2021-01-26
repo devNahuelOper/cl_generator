@@ -1,3 +1,6 @@
+// const PDFDocument = require("pdfkit");
+// const fs = require("fs");
+
 
 
 export function coverLetterAutomator(name, company, mission, position) {
@@ -14,8 +17,13 @@ Thank you for your consideration.
 Best regards,
 
 Nahuel Gorosito
-`
+`;
 }
 
-const cover = coverLetterAutomator('Nuno Pereira', 'Holy Grail', 'find optimal solutions for impactful R&D and optimization problems', 'kingpin');
+const cover = coverLetterAutomator(
+  "Nuno Pereira",
+  "Holy Grail",
+  "find optimal solutions for impactful R&D and optimization problems",
+  "kingpin"
+);
 console.log(cover);
